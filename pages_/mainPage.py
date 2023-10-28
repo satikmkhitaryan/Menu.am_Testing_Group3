@@ -6,10 +6,6 @@ class MainPage(BasePage):
     def __init__(self, driver: webdriver):
         self.driver = driver
 
-    def click_to_search_field(self):
-        searchField = self._find_element(By.NAME, "search")
-        self._click(searchField)
-
     def fill_search_field(self, text):
         searchFieldElement = self._find_element(By.NAME, "search")
         self._click(searchFieldElement)
@@ -24,7 +20,8 @@ class MainPage(BasePage):
         self._click(serviceElement)
 
     def click_to_filters_checkbox(self):
-        filterCheckboxElement = self._find_element(By.XPATH, "//input[@class='jss1702'][1]")
+        filterCheckboxElement = self._find_element(By.XPATH, "(//input[@class='jss1702']) [2]")
+        self._click(filterCheckboxElement)
 
 
 
